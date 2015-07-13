@@ -14,23 +14,13 @@ app.fetch = function (data) {
 	});
 };
 app.clearMessages = function() {
- 	// $.ajax({
-  //       type: 'DELETE',
-        // data: 
-  //           customername: customernameedit,
-  //           customerphone: customerphone,
-  //           data: quotedata
-  //       }, success: function(response) {
-  //           $("#Message").html(response);
-  //       }
-  		// $('#chats').empty()
-  		$('#chats').empty();
-// document.getElementById(this).reset() 
-
-	// $('body').reset();
-    // });
-
+  	$('#chats').empty();
 };
-app.addMessage = function() {
-	$('#chats').append(message);
+app.addMessage = function(message) {
+	$('#chats').append("<p>"+message.text+"</p>");
+	console.log($('#chats'))
+}
+app.addRoom = function(child) {
+	$('#roomSelect').append("<div></div>")
+	console.log($('#roomSelect')); //.append(room);
 }
