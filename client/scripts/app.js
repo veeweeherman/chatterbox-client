@@ -31,3 +31,6 @@ app.clearMessages = function() {
     // });
 
 };
+app.addMessage = function() {
+	$('#chats').append(message);
+}
