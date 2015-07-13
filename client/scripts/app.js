@@ -13,3 +13,21 @@ app.fetch = function (data) {
 		data: JSON.stringify(data),
 	});
 };
+app.clearMessages = function() {
+ 	// $.ajax({
+  //       type: 'DELETE',
+        // data: 
+  //           customername: customernameedit,
+  //           customerphone: customerphone,
+  //           data: quotedata
+  //       }, success: function(response) {
+  //           $("#Message").html(response);
+  //       }
+  		// $('#chats').empty()
+  		$('#chats').empty();
+// document.getElementById(this).reset() 
+
+	// $('body').reset();
+    // });
+
+};
