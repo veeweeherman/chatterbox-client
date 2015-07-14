@@ -1,19 +1,37 @@
 // YOUR CODE HERE:
 var app = {};
-app.init = function() {};
+app.init = function(){};
 app.send = function(message) {
 	$.ajax({
-		type: 'POST',
- 		url: 'https://api.parse.com/1/classes/chatterbox',
- 		data: JSON.stringify(message)
+	  // This is the url you should use to communicate with the parse API server.
+	  url: 'https://api.parse.com/1/classes/chatterbox',
+	  type: 'POST',
+	  data: JSON.stringify(message),
+	  contentType: 'application/json',
+	  success: function (data) {
+	    console.log('chatterbox: Message sent');
+	  },
+	  error: function (data) {
+	    // See: https://developer.mozilla.org/en-US/docs/Web/API/console.error
+	    console.error('chatterbox: Failed to send message');
+	  }
 	});
 };
 
 app.fetch = function () {
 	$.ajax({
-		type: 'GET',
 		url: 'https://api.parse.com/1/classes/chatterbox',
-		data: JSON.stringify(data)
+		type: 'GET',
+		contentType: 'application/json',
+		success: function (data) {
+		  console.log('chatterbox: Message recieved');
+		},
+		error: function (data) {
+		  // See: https://developer.mozilla.org/en-US/docs/Web/API/console.error
+		  console.error('chatterbox: Failed to send message');
+		},
+		// data: JSON.parse(message)
+
 	});
 };
 
@@ -36,13 +54,13 @@ app.addFriend = function(){
 
 	$('.username').on('click', function(){
 		// $('#chats').append();
-			$('#main').append("<p class='username'>"+message.username+"</p>")
+			// $('#main').append("<p class='username'>"+message.username+"</p>")
 	});
 
 	// console.log($('#main'));
 }
-app.fetch();
+// app.fetch();
 
 
 
-console.log($('#main'));
+console.log($('#main').find('.username'));
