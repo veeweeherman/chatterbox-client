@@ -24,6 +24,13 @@ app.send = function(message) {
 	    console.error('chatterbox: Failed to send message');
 	  }
 	});
+
+};
+
+var userObject = {
+	username: null,
+	text: null,
+	roomname: null
 };
 
 app.fetch = function() {
@@ -60,4 +67,5 @@ app.addFriend = function(){
 	$('.username').on('click', function(){
 	});
 }
+
 
