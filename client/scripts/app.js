@@ -24,7 +24,7 @@ app.fetch = function () {
 		type: 'GET',
 		contentType: 'application/json',
 		success: function (data) {
-		  console.log('chatterbox: Message recieved');
+		  console.log(data);
 		},
 		error: function (data) {
 		  // See: https://developer.mozilla.org/en-US/docs/Web/API/console.error
