@@ -11,14 +11,20 @@
     <!-- your scripts -->
     <script src="env/config.js"></script>
     <script src="scripts/app.js"></script>
+    <!-- <script>$('#submitMessage').keyup(function(){alert($(this).val())
+    });</script> -->
     
   </head>
   <body>
     <div id="main">
       <h1>chatterbox</h1>
-        <input type="text" name="username">  Enter username</input><br>
-        <textarea name="message">Add your comment here</textarea>
-          <div><button type ="button" id="button" onclick="app.fetch();">refresh page</button></div>
+        
+        <!-- comment text area, and submit button-->
+        <textarea class="message" name="message"></textarea>
+        <div><button type ="button" id="submitMessage">Submit your message</button></div>
+          
+        <!-- button to refresh -->
+        <div><button type ="button" id="button">Refresh page</button></div>
 
     </div>
   </body>
