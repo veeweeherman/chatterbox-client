@@ -17,16 +17,22 @@ app.send = function(message) {
 	  }
 	});
 };
-
+window.allInfo = {};
 app.fetch = function () {
 	$.ajax({
 		url: 'https://api.parse.com/1/classes/chatterbox',
 		type: 'GET',
 		contentType: 'application/json',
 		success: function (data) {
-		  console.log(data);
-		},
-		error: function (data) {
+		  
+	  	for (var i = 0; i < data.results.length; i++) {
+	  			$('body').append(data.results[i].username);
+	  	};
+	  	// for (var i = 0; i < data.results.length; i++) {
+  		// 	allInfo.data[results[i][username]] = data.results[i][username];
+	  	// }
+	  },
+		error: function () {
 		  // See: https://developer.mozilla.org/en-US/docs/Web/API/console.error
 		  console.error('chatterbox: Failed to send message');
 		},
@@ -34,7 +40,9 @@ app.fetch = function () {
 
 	});
 };
-
+app.fetch();
+// setInterval(app.fetch, 10000)
+console.log(allInfo)
 app.clearMessages = function() {
   	$('#chats').empty();
 };
